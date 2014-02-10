@@ -1,0 +1,34 @@
+PRACTICAS
+
+	# filosofia movil first y responsive desing
+	# html5 boilerplate mejores practicas
+
+	# en "css orientado a objetos", reservar los id para javascript en css utilizar clases para tratar a cada elemento como un objeto
+
+	# cuando la imagen no es parte del contenido cargar las imagenes por css
+
+	# mantener solo un header, un nav y un h1 por pagina
+
+HEAD
+	dependencia al responsive design
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	todo el css igual en todos los navegadores
+	(no utilizar reset en css)
+	<link rel="stylesheet" href="css/normalize.css"> 
+
+	libreria js para hacer que todo lo de html5 funcione bien en navegadores
+	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+BODY
+	todo el javascript antes de cerrar la etiqueta
+
+ESTRUCTURA
+
+	header
+	nav -> botones de navegacion
+	section
+	article -> ultimo item dentro de un sistema semantico
+	footer
+	figure -> imagenes
+
