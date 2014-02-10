@@ -38,17 +38,56 @@ ESTRUCTURA
 CSS
 	#margin <arriba> <derecha> <abajo> <izq>
 
+	#padding <arriba/abajo> <lados>
+
+	#text-shadow <desplazamiento en X> <desplazamiento en y> <difumina> <color sombra>
+
 	#para los margenes considerar los pixeles de los divs anteriores sobre todo cuando hay un div flotando a la izq. ej. si tengo un div:float left; width 60px; para poner un margen al div contiguo es necesario sumar el width + el margen deseado  
 
 	#border-radius 1em: bordes redondeados
 	#border-radius 50%: imagen circular
 
+	#DISPLAY:
+		inline; si se ubica en un texto se posiciona normal dentro e el, se pueden mover dentro del div
+
+		block; ocupa el maximo ancho del div, obliga a los objetos hacer un salto de linea, no pueden tener margin ni padding
+		(transforma en cajas los objetos)
+
+		inline-block; convierte cualquier caja u objeto con margin, padding pero no elimina las cosas de la derecha o que estan al lado de el
+
+		#FLOAT: left; o right;
+			(rompe las caracteristicas de campo de fuerza qe tienen los objetos, permite que el resto de los objetos rodee a otro.)
+
+		#POSITION:
+			(todos los objetos tienen por defecto una posicion static)
+
+			relative; adquiere la capacidad de utilizar top left button y right, pero aun sigue empujando al resto de los objetos (mantiene su campo de fuerza)
+
+			absolute; obtiene las mismas caracteristicas que relative, pero rompe su campo de fuerza y ubica su punto 0.0 en el body excepto si la caja a la que se le aplica esta dentro de un POSITION
+			(busca el contenedor mas cercano que tenga relative y a partir de ese busca su punto 0.0)
+
+		#Z-INDEX 0..n
+			(permite crear capaz y superponerlas, requiere position: absolute o relative en las capaz superiores, 0 es la capa mas al interior)
+
+		#OVERFLOW: hidden;  
+				(obliga al objeto a esconder lo que se sale, recalcula el alto incluyendo a los objetos que se salen)
+
+		#OVERFLOW-X auto;(horizontal)
+				(ajusta el objeto y crea un scroll si es mas grande que el ancho de la pagina)
+
+		#WHITE_SPACE nowrap
+			(mata la propiedad de salto de linea de los textos contenidos en un objeto)
+
+		#BOX-SHADOW <x> <y> <difuminacion> <color>
+			sombra para las cajas
 APUNTE
 
 	#instalar node.js y stylus
 
 	#compilar stylus
 	stylus prueba1.styl -c -w
+
+	#los objetos que contienen texto (p,hn,ul-li) siempre tienen un margenes por defecto
 
 	# por defecto recomendado para la web
 	font-size 16px
@@ -61,6 +100,8 @@ APUNTE
 	# en imagenes utilizar pixeles absolutos, para textos y otras cosas utilizar tamaños adaptables
 
 	# se pueden agregar varias clases a un tag <div class="logo left">
+
+	# utilizar display inline-block en los ul-li para mostrarlos de forma horizontal
 
 
 
