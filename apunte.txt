@@ -45,6 +45,11 @@ CSS
 
 	#padding <arriba/abajo> <lados>
 
+	# border 1px dashed invert(color): el invert crea un objeto con el color mas contrastante del ingresado como parametro
+
+	border 1px solid lighten(color, 40%) lighten() aclara un porcentaje del color entregado
+
+
 	#text-shadow <desplazamiento en X> <desplazamiento en y> <difumina> <color sombra>
 
 	#para los margenes considerar los pixeles de los divs anteriores sobre todo cuando hay un div flotando a la izq. ej. si tengo un div:float left; width 60px; para poner un margen al div contiguo es necesario sumar el width + el margen deseado  
@@ -138,5 +143,35 @@ APUNTE
 
 	# utilizar display inline-block en los ul-li para mostrarlos de forma horizontal
 
+	# bootstrap clases css predeterminadas para hacer ejemplos o ideas, sistema de grillas (grid system)
 
+		por defecto utiliza normalize.css
+
+		# crea columnas: div.row
+
+		#las grillas tiene 4 tipos y estan compustas 12 columnas
+		col-lg-3 (desktop - large): grilla grande para resoluciones de mas de 1200px
+
+		col-md-3 (desktop - medium): grilla con hasta 980px
+
+		col-sm-3 (tablet - small): grilla para tablets hasta 768px
+
+		col-xs-3 (phone - extrasmall): para telefonos hasta 480px (con el 3 ocupa hasta 3 columnas de ancho)
+
+		class="visible-(tamaño)" visibilidad dependiendo del tamaño de la resolucion
+
+		class pull-right: alinea a la derecha
+
+		class btn, btn-default: crea estilo botones
+
+		class nav, nav-pills, nav-tabs: crean barras de navegacion con ul-li
+
+		class="text-center" alinea el texto al centro
+
+
+	TRUCO SUBLIME EMMET
+
+	div.col*4>{columna $}	4 divs con clase col y valor interior columna + numero
+
+	seleccionar algo y ctrl + d permite modificar todas las ocurrencias del objeto seleccionado
 
