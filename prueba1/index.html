@@ -21,6 +21,11 @@
 				<a class="filtro" href="#"> stylus</a>
 				<a class="publicar" href="#">publicar</a>
 			</div>
+			<div>
+				<a href="#14" class="sizer">A</a>
+				<a href="#16" class="sizer">A</a>
+				<a href="#18" class="sizer">A</a>
+			</div>
 		</div>
 		<!-- usuario -->
 		<div class="usuario">
@@ -271,6 +276,47 @@
 			$('input[type=text]').val('');
 			$('.form').slideUp();
 			}
+
+			function resizer(pixeles){
+				return function(){
+					$('body').css('font-size', pixeles+'px');
+				}
+			}
+
+			$('.sizer').each(function(i,link){
+				var pixeles = $(link).prop('hash').substring(1);
+				$(link)
+						.css('font-size',pixeles+'px')
+						.on('click',resizer(pixeles));
+			});
+
+			function crearContador(valorInicial){
+				var contador = valorInicial || 0;
+
+				return {
+					up : function(){
+						return ++contador;
+					},
+					down : function(){
+						return --contador;
+					}
+				};
+			};
+
+			$('.total').each(function(i, elem){
+				var conTotal = crearContador(elem.innerHTML);
+				$(elem)
+					.siblings('.up')
+						.on('click', function(ev){
+								ev.preventDefault();
+								$(elem).html(conTotal.up);
+						})
+					.siblings('.down')
+						.on('click', function(ev){
+								ev.preventDefault();
+								$(elem).html(conTotal.down);
+						});
+			});
 		});
 	</script>
 </body>

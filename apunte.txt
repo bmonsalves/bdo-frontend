@@ -185,6 +185,9 @@ APUNTE
 -------------------
 JAVASCRIPT
 
+	#debugear
+	debugger;
+
 	#crear variables (sitring con comillas)
 	var a = 1
 
@@ -250,6 +253,9 @@ JAVASCRIPT
 	
 	JQUERY
 
+	#busca en los elementos que estan al mismo nivel del objeto entregado
+	$(elem).sibligs('.up')
+
 	#cuando no se asigna un documento jquery asume que es el document object y el evento ready
 	$(function(){ ... });
 
@@ -293,3 +299,58 @@ JAVASCRIPT
 
 	#ocultar el slide
 	$('.form').slideUp();
+
+	#ejecuta a cada uno de los elementos una funcion que siempre recibe 2 parametro (indice)
+	$('.sizer').each(function(i,var){});
+
+
+CLOSURES
+	
+	FUNCIONES
+	#junto a los objetos son los actores principales
+
+	#cada vez que se crea una funcion se crea un nuevo contexto "ageno" al contexto global (window)
+
+	#las funciones tienen acceso a los datos de su propio contexto y de todos los contextos que la contienen, pero no al contexto de las funciones que alojan dentro de ella
+
+	CLOSURES
+		una funcion que es evaluada a traves del contexto lexico en la que fue definida, junto a las variables libres asociadas
+
+		#crear una puerta entre el contexto global y el contexto de una funcion
+
+		#es la declaracion de una funcion mas el contexto en la que fue declarada
+
+		#uso:
+			fabrica funciones
+			ocultar codigo
+			definir modulos
+			extender el lenguaje
+
+		#FABRICAR UNA FUNCION
+			#ejemplo
+			function resizer(pixeles){
+				return function(){
+					document.body.style.fontSize = pixeles+'px';
+				}
+			}
+
+			var size14 = resizer(14);
+
+			la variable size14 contiene la funcion:
+			function(){document.body.style.fontSize = pixeles+'px';}
+
+		#OCULTAR (PRIVACIDAD) CODIGO
+			var contador = (function(){
+				var _contador = 0 /*interfaz privada*/
+
+				/*interfaz publica*/
+				return {
+					incrementar : function(){
+						_contador++;
+					},decrementar : function(){
+						_contador--;
+					}, ver : function(){
+						console.log(_contador);
+					}
+ 				}
+			})();

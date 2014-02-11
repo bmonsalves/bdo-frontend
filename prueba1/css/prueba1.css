@@ -1,6 +1,6 @@
 @font-face{font-family:'iconos';src:url("../fonts/icomoon.eot?-pw7ktq");src:url("../fonts/icomoon.eot?#iefix-pw7ktq") format('embedded-opentype'),url("../fonts/icomoon.woff?-pw7ktq") format('woff'),url("../fonts/icomoon.ttf?-pw7ktq") format('truetype'),url("../fonts/icomoon.svg?-pw7ktq#icomoon") format('svg');font-weight:normal;font-style:normal}
 a{color:#dd4f24}
-body{background:#e8e8e8;color:#444;font-family:Arial;font-size:16px}
+body{background:#e8e8e8;color:#444;font-family:Arial;font-size:16px;transition:font-size 1s}
 footer{background:#dd4f24;color:rgba(255,255,255,0.5);padding:1em 0;text-align:center;width:100%;}
 footer h3{font-size:14px;font-weight:normal;}
 footer h3 strong{display:block}
@@ -49,6 +49,7 @@ nav .menu li a:hover{background:rgba(0,0,0,0.1)}
 .posts .post .descripcion .imagen img{height:160px;vertical-align:top;width:120px}
 @media screen and (min-width: 768px){header .titular .publicar{font-size:1.5em;position:relative;padding-left:3em;}
 header .titular .publicar:before{font-size:2.5em;position:absolute;left:0;top:-10px}
+header .titular .sizer{text-decoration:none}
 .posts .post{display:inline-block;vertical-align:top;width:48%;}
 .posts .post:nth-child(odd){margin-right:2%}
 }
