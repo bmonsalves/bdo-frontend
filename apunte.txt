@@ -11,10 +11,15 @@ PRACTICAS
 
 	#utilizar margenes en relacional tamaño de la fuente (em)
 
+	agregar a las imagenes un vertical-align top
+
+	utilizar display block para los saltos de linea
 HTML----------
 HEAD
 	dependencia al responsive design
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1>
+	initial-scale full por defecto
+	maximum-scale limita el zoom
 
 	todo el css igual en todos los navegadores
 	(no utilizar reset en css)
@@ -30,7 +35,7 @@ ESTRUCTURA
 
 	header
 	nav -> botones de navegacion
-	section
+	section -> todo el contenido
 	article -> ultimo item dentro de un sistema semantico
 	footer
 	figure -> imagenes
@@ -46,6 +51,7 @@ CSS
 
 	#border-radius 1em: bordes redondeados
 	#border-radius 50%: imagen circular
+	border-radius <sup-izq> <sup-der> <inf-izq> <inf-der>
 
 	#DISPLAY:
 		inline; si se ubica en un texto se posiciona normal dentro e el, se pueden mover dentro del div
@@ -69,7 +75,7 @@ CSS
 		#Z-INDEX 0..n
 			(permite crear capaz y superponerlas, requiere position: absolute o relative en las capaz superiores, 0 es la capa mas al interior)
 
-		#OVERFLOW: hidden;  
+		#OVERFLOW: hidden;  RECALCULA EL ALTO
 				(obliga al objeto a esconder lo que se sale, recalcula el alto incluyendo a los objetos que se salen)
 
 		#OVERFLOW-X auto;(horizontal)
@@ -80,6 +86,35 @@ CSS
 
 		#BOX-SHADOW <x> <y> <difuminacion> <color>
 			sombra para las cajas
+
+		#HOVER (div:hover)
+			aplica estilos encima de un objeto al posicionarse con el mouse
+
+		#BEFORE (div:before)
+			se puede agregar contenido "content: '---'" al inicio de un div y antes del contenido propio
+			(no se muestra al inspeccionar elemento)
+
+		#AFTER (div:after)
+			igual que before pero al terminar en contenido interior del div
+			(no se muestra al inspeccionar elemento)
+
+		#CONTENT
+			sirve para agregar contenido al div que es propio del diseño y no interfiere directamente en la app, solo funciona dentro de after y before
+		
+		#&:nth-child(even) puede diferenciar objetos entre pares(even) e impares(odd) por ejemplo
+
+		#&::  acceder al shadow-dom
+
+
+		#RESPONSIVE
+			MEDIAQUERYS forma en css condicional para cambiar el diseño
+			min-width: para mobile first
+			max-width: para escritorio hacia movil
+
+			cuando el medio sea menor a 768px conserve las condiciones actuales, si es mayor haga lo siguiente
+			@media screen and (min-width: 768px)
+
+
 APUNTE
 
 	#instalar node.js y stylus

@@ -1,11 +1,42 @@
 grisOscuro = #444
+grisTexto = #7a7a7a
 naranja = #dd4f24
 azul = #22bce0
+
+@font-face {
+	font-family: 'iconos';
+	src:url('../fonts/icomoon.eot?-pw7ktq');
+	src:url('../fonts/icomoon.eot?#iefix-pw7ktq') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-pw7ktq') format('woff'),
+		url('../fonts/icomoon.ttf?-pw7ktq') format('truetype'),
+		url('../fonts/icomoon.svg?-pw7ktq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+a
+	color naranja
 body
 	background #e8e8e8
 	color grisOscuro
 	font-family Arial
 	font-size 16px
+
+footer
+	background naranja
+	color rgba(white,0.5)
+	padding 1em 0
+	text-align center
+	width 100%
+	h3
+		font-size 14px
+		font-weight normal
+		strong
+			display block
+		.mejor
+			&:before
+			&:after
+				content " - "
 
 header
 	background grisOscuro
@@ -14,9 +45,11 @@ header
 	padding 0.5em
 	position relative
 	overflow hidden
+	z-index 2
 
 	.logo
 		border-right 1px solid azul
+		float left
 		width 60px
 		img
 			width 52px
@@ -36,6 +69,12 @@ header
 			padding 0.2em 0.5em
 			text-decoration none
 			text-shadow 1px 1px 0px black
+			&:before
+				font-family 'iconos'
+				content "\e600"
+				text-shadow none
+				margin 0 3px 0 0
+				display inline-block
 		.titulo
 			font-size 18px
 			font-weigth normal
@@ -53,6 +92,7 @@ header
 			img
 				border-radius 50%
 				width 50px
+
 		.flechita
 			background naranja
 			color white
@@ -65,11 +105,26 @@ header
 			right 0
 			top 15px
 			z-index 0
+			&:before
+				font-family 'iconos'
+				content "\e602"
+				text-shadow 1px 1px 0px black
+				display block
+				margin 1px 0 0 1px
 
 
 nav
 	border-left 15px solid white
 	background azul
+	position relative
+	&:before
+		border-bottom 20px solid transparent
+		border-left 7px solid white
+		border-top 20px solid transparent
+		content ""
+		left 0px
+		position absolute
+		top 0
 	.menu
 		height 40px
 		line-height 40px
@@ -77,6 +132,8 @@ nav
 		padding 0
 		white-space nowrap
 		overflow-x auto
+		&::-webkit-scrollbar
+			display none
 		li
 			display inline-block
 			a
@@ -85,10 +142,106 @@ nav
 				text-decoration none
 				padding 0 0.2em
 				margin 0 0.5em
+				&:hover
+					background rgba(0,0,0,0.1)
+
+.posts
+	padding 0.5em
+	.post
+		background white
+		box-shadow 2px 2px 10px rgba(black, 0.5)
+		border-radius 0 0 0.5em 0.5em
+		color grisTexto
+		margin-bottom 0.5em
+		.acciones
+			border-top 3px solid azul
+			padding 0.5em
+			overflow hidden
+			.datos
+				float right
+				.comentarios
+					color white
+					background grisOscuro
+					border-radius 3px
+					padding 2px 5px
+					text-decoration none
+					margin 0 1em 0 0
+				.estrellita
+					text-decoration none
+					font-family 'iconos'
+					&:before
+						color #fcb92d
+						content "\e601"
+						font-size 1.1em
+						vertical-align top
+
+			.votos
+				float left
+				font-family 'iconos'
+				.up
+				.down
+					text-decoration none
+					font-size 1.5em
+					vertical-align middle
+				.down
+					color red
+					&:before
+						font-family 'iconos'
+						content "\e602"
+
+				.up
+					color green
+					&:before
+						font-family 'iconos'
+						content "\e603"
+		.descripcion
+			.detalles
+				height 160px
+				margin-left 130px
+				.titulo
+					color grisOscuro
+					font-size 1.1em
+					font-style italic
+					margin 0
+					padding 0.5em 0.5em 0 0
+				.autor
+					margin 0.5em 0 2em 0
+				.fecha
+					float right
+					margin 0 1em 0 0
+				.tag
+					background azul
+					border-radius 0.5em
+					color white
+					padding 0.2em 0.5em
+					text-decoration none
+			.imagen
+				float left
+				img
+					height 160px
+					vertical-align top
+					width 120px
 
 
-.left
-	float left
+@media screen and (min-width: 768px)
+	header
+		.titular
+			.publicar
+				font-size 1.5em
+				position relative
+				padding-left 3em
+				&:before
+					font-size 2.5em
+					position absolute
+					left 0
+					top -10px
 
-.right
-	float right
+	.posts
+		.post
+			display inline-block
+			vertical-align top
+			width 48%
+			&:nth-child(odd)
+				margin-right 2%
+
+
