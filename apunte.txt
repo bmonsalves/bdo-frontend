@@ -175,6 +175,13 @@ APUNTE
 
 	seleccionar algo y ctrl + d permite modificar todas las ocurrencias del objeto seleccionado
 
+	el simbolo ^ permite salir del nivelsalir de nivel
+	p>label>{Titulo}+^input
+
+	agregar mas paramatros a los tags
+	input[type=submit]
+		
+
 -------------------
 JAVASCRIPT
 
@@ -228,3 +235,61 @@ JAVASCRIPT
 			persona.nombre = "bdo"
 			persona.edad = 123
 			persona.pais = "cl"
+
+
+
+	EVENTOS
+	#carga eventos cuando termina de cargar la pagina
+	$(window).on('load', darBienvenida)
+
+	#se dispara cuando se carga el dom
+	$(document).on('ready', function(){
+		...todo...
+	});
+
+	
+	JQUERY
+
+	#cuando no se asigna un documento jquery asume que es el document object y el evento ready
+	$(function(){ ... });
+
+	#asigna una funcion a una clase del html al hacer click sobre ella
+	$('.publicar').on('click', darBienvenida);
+
+	#saca el evento click
+	$('.publicar').off('click', darBienvenida);
+
+	#manipular css desde js
+	$('.form').css('display','block')
+
+	#efecto para mostrar div oculto (desplazamiento hacia abajo)
+	$('.form').slideDown();
+
+	#efecto para mostrar y ocultar div co el mismo boton (desplazamiento hacia arriba/abajo)
+	$('.form').slideToggle();
+
+	#funcionamiento de un boton
+	$('.form').on('submit', procesarForm);
+
+	# a cualquier funcion que se le asigne un evento, el primer parametro que recibe esa funcion siempre sera el evento que se disparo y se puede capturar y procesar.
+	function procesarForm(event){
+		#no ejecuta la accion por defecto que el evento debiera realizar
+		event.preventDefault();
+	}
+
+	#permite obtener el valor de un input sin id (sin .val() obtiene el objeto entero)
+	var titulo = $('input[name=titulo]').val();
+
+	#toma todos los valores de la variable template, los procesa e inserta en el html a la altura de la class indicada
+	$('.posts').prepend(template);
+
+		#efecto de aparecer y alinear
+		$('.posts').prepend($(template).fadeIn(function(){
+				$(this).css('display','inline-block')
+			}));
+
+	#setea a vacio los campos input
+	$('.input[type=text]').val('');
+
+	#ocultar el slide
+	$('.form').slideUp();
