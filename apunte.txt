@@ -175,3 +175,56 @@ APUNTE
 
 	seleccionar algo y ctrl + d permite modificar todas las ocurrencias del objeto seleccionado
 
+-------------------
+JAVASCRIPT
+
+	#crear variables (sitring con comillas)
+	var a = 1
+
+	#funcion que permite mandar info a la consola del navegador
+	console.log(a)
+
+	#FOR
+		for (var i=0; i<10; i++){...};
+
+	#IF
+		if (true){...} else{...};
+
+	#SWITCH
+		switch(a){
+			case a: ...; break;
+			case b: ...; break;
+			case c: ...; break;
+			default: ...;
+		}
+
+	#FUNCIONES
+		function hacerAlgo(params){...; return algo;}
+
+		#llamar funcion
+		hacerAlgo();
+
+		#recibir valor retornado
+		var a = hacerAlgo();
+
+	#ESTRUCTURAS DE DATOS
+		#arrays
+			var tiempo = [v1,v2,v3];
+			------- == ------
+			var tiempo = [];
+			tiempo.push(v1);
+			tiempo.push(v2);
+			tiempo.push(v3);
+
+		#todo en js es un objeto
+		#objetos (puede contener objetos)
+			var persona = {
+			nombre: "bdoP",
+			edad: 234,
+			pais: "cl"
+			};
+			------- == ------
+			var persona = {};
+			persona.nombre = "bdo"
+			persona.edad = 123
+			persona.pais = "cl"
